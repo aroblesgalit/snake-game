@@ -5,11 +5,12 @@ export const snakeBody = [
     { x: 11, y: 11 }
 ];
 let newSegments = 0;
+let inputDirection;
 
 export function update() {
     addSegments();
 
-    const inputDirection = getInputDirection();
+    inputDirection = getInputDirection();
     for (let i = snakeBody.length - 2; i >= 0; i--) {
         snakeBody[i + 1] = { ...snakeBody[i] }
     }
@@ -19,13 +20,30 @@ export function update() {
 }
 
 export function draw(gameBoard) {
-    snakeBody.forEach(segment => {
+    snakeBody.forEach((segment, i) => {
         const snakeElement = document.createElement('div');
         snakeElement.style.gridRowStart = segment.y;
         snakeElement.style.gridColumnStart = segment.x;
+        if (i === 0) {
+            if ((inputDirection.x === 0 && inputDirection.y === 0) || (inputDirection.x === 1 && inputDirection.y === 0)) {
+                snakeElement.style.borderTopRightRadius = "50%";
+                snakeElement.style.borderBottomRightRadius = "50%";
+            } else if (inputDirection.x === -1 && inputDirection.y === 0) {
+                snakeElement.style.borderTopLeftRadius = "50%";
+                snakeElement.style.borderBottomLeftRadius = "50%";
+            } else if (inputDirection.x === 0 && inputDirection.y === -1) {
+                snakeElement.style.borderTopLeftRadius = "50%";
+                snakeElement.style.borderTopRightRadius = "50%";
+            } else {
+                snakeElement.style.borderBottomLeftRadius = "50%";
+                snakeElement.style.borderBottomRightRadius = "50%";
+            }
+            
+        }
         snakeElement.classList.add('snake')
         gameBoard.appendChild(snakeElement);
     })
+    
 }
 
 export function expandSnake(amount) {
