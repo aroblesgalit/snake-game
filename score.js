@@ -6,9 +6,8 @@ export function update() {
     if (snakeBody.length > 1) {
         score = (snakeBody.length - 1) * 5; 
     }
-    console.log(`Score: ${score}`);
 }
 
-export function draw() {
-
+export function draw(scoreBoard) {
+    scoreBoard.innerText = `${score}`;
 }
