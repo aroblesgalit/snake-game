@@ -27,6 +27,10 @@ body {
     border: 0.25vmin solid rgb(33, 35, 37);
 }
 
+/* .snake:nth-child(1) {
+    border-radius: 50%;
+} */
+
 .food {
     background-color: hsl(50, 100%, 50%);
     border: 0.25vmin solid rgb(33, 35, 37);
