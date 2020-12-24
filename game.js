@@ -1,12 +1,14 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection } from './snake.js';
 import { update as updateFood, draw as drawFood } from './food.js';
 import { outsideGrid } from './grid.js';
-import { update as updateScore, draw as drawScore, addToHighscore, score } from './score.js';
+import { update as updateScore, draw as drawScore, addToHighscore, score, highscores, renderHighscores } from './score.js';
 
 let lastRenderTime = 0;
 let gameOver = false;
 const gameBoard = document.getElementById('game-board');
 const scoreBoard = document.querySelector('.score');
+
+renderHighscores(highscores);
 
 function main(currentTime) {
     if (gameOver) {
@@ -14,6 +16,7 @@ function main(currentTime) {
         if (confirm('You lost. Press ok to restart.')) {
             window.location = '/';
         }
+        // renderHighscores(highscores);
         return;
     }
 

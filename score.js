@@ -49,5 +49,5 @@ export function renderHighscores(highscores) {
     const template = highscores
         .map(highscore => `<li>${highscore.highscore} - ${highscore.name}</li>`)
         .join('')
-    return highscoreList.append(template);
+    return highscoreList.innerHTML = template;
 }
