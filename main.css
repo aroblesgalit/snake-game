@@ -50,3 +50,21 @@ body {
     font-size: 32px;
     color: hsl(50, 100%, 50%);
 }
+
+.highscores {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgb(65, 65, 66);
+}
+
+.highscores>h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.names {
+    font-size: 28px;
+    color: hsl(50, 100%, 50%);
+    list-style-position: inside;
+}
+
