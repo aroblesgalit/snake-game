@@ -68,3 +68,25 @@ body {
     list-style-position: inside;
 }
 
+.level {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(65, 65, 66);
+}
+
+.level button {
+    padding: 6px 10px;
+    background-color: transparent;
+    border: 1px solid  rgb(65, 65, 66);
+    color: #868686;
+    cursor: pointer;
+}
+
+.level button:hover {
+    border: 1px solid hsl(50, 100%, 50%);
+}
+
+.level button.active {
+    border: 1px solid hsl(50, 100%, 50%);
+    color:  hsl(50, 100%, 50%);
+}

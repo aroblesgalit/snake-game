@@ -5,6 +5,7 @@ import { update as updateScore, draw as drawScore, addToHighscore, score, highsc
 
 let lastRenderTime = 0;
 let gameOver = false;
+let level = 'easy';
 const gameBoard = document.getElementById('game-board');
 const scoreBoard = document.querySelector('.score');
 
