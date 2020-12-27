@@ -1,4 +1,5 @@
 import { getInputDirection } from "./input.js";
+// import { expansionRate } from './food.js';
 
 export let snakeSpeed = 5;
 export const snakeBody = [
@@ -38,12 +39,12 @@ export function draw(gameBoard) {
                 snakeElement.style.borderBottomLeftRadius = "50%";
                 snakeElement.style.borderBottomRightRadius = "50%";
             }
-            
+
         }
         snakeElement.classList.add('snake')
         gameBoard.appendChild(snakeElement);
     })
-    
+
 }
 
 export function expandSnake(amount) {
@@ -75,4 +76,27 @@ function addSegments() {
     }
 
     newSegments = 0;
+}
+
+export function updateLevel() {
+    // setActive(level);
+    let dataLevel = this.dataset.level;
+    switch (dataLevel) {
+        case 'easy':
+            snakeSpeed = 5;
+            // expansionRate = 1;
+            break;
+        case 'medium':
+            snakeSpeed = 10;
+            // expansionRate = 2;
+            break;
+        case 'hard':
+            snakeSpeed = 15;
+            // expansionRate = 4;
+            break;
+        default:
+            snakeSpeed = 5;
+            // expansionRate = 1;
+            break;
+    }
 }
