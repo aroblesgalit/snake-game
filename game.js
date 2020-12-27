@@ -7,7 +7,7 @@ let lastRenderTime = 0;
 let gameOver = false;
 const gameBoard = document.getElementById('game-board');
 const scoreBoard = document.querySelector('.score');
-const levels = document.getElementById('level').querySelectorAll('button[data-level]');
+export const levels = document.getElementById('level').querySelectorAll('button[data-level]');
 
 renderHighscores(highscores);
 
@@ -50,7 +50,9 @@ function checkDeath() {
     gameOver = outsideGrid(getSnakeHead()) || snakeIntersection();
 }
 
-levels.forEach(level => level.addEventListener('click', updateLevel));
+levels.forEach(level => {
+    level.addEventListener('click', updateLevel);
+});
 
 
 

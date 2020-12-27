@@ -1,5 +1,6 @@
 import { getInputDirection } from "./input.js";
 // import { expansionRate } from './food.js';
+import { levels } from './game.js';
 
 export let snakeSpeed = 5;
 export const snakeBody = [
@@ -80,7 +81,9 @@ function addSegments() {
 
 export function updateLevel() {
     // setActive(level);
+    levels.forEach(level => level.classList.remove('active'));
     let dataLevel = this.dataset.level;
+    this.classList.add('active');
     switch (dataLevel) {
         case 'easy':
             snakeSpeed = 5;
