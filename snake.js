@@ -80,26 +80,21 @@ function addSegments() {
 }
 
 export function updateLevel() {
-    // setActive(level);
     levels.forEach(level => level.classList.remove('active'));
     let dataLevel = this.dataset.level;
     this.classList.add('active');
     switch (dataLevel) {
         case 'easy':
             snakeSpeed = 5;
-            // expansionRate = 1;
             break;
         case 'medium':
             snakeSpeed = 10;
-            // expansionRate = 2;
             break;
         case 'hard':
             snakeSpeed = 15;
-            // expansionRate = 4;
             break;
         default:
             snakeSpeed = 5;
-            // expansionRate = 1;
             break;
     }
 }

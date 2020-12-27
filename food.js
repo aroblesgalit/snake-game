@@ -26,3 +26,21 @@ function getRandomFoodPosition() {
     }
     return newFoodPosition;
 }
+
+export function updateLevel() {
+    let dataLevel = this.dataset.level;
+    switch (dataLevel) {
+        case 'easy':
+            expansionRate = 1;
+            break;
+        case 'medium':
+            expansionRate = 2;
+            break;
+        case 'hard':
+            expansionRate = 4;
+            break;
+        default:
+            expansionRate = 1;
+            break;
+    }
+}

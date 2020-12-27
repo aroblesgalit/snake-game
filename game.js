@@ -1,5 +1,5 @@
-import { update as updateSnake, draw as drawSnake, getSnakeHead, snakeIntersection, snakeSpeed, updateLevel } from './snake.js';
-import { update as updateFood, draw as drawFood } from './food.js';
+import { update as updateSnake, draw as drawSnake, getSnakeHead, snakeIntersection, snakeSpeed, updateLevel as updateSnakeSpeed } from './snake.js';
+import { update as updateFood, draw as drawFood, updateLevel as updateExpRate } from './food.js';
 import { outsideGrid } from './grid.js';
 import { update as updateScore, draw as drawScore, addToHighscore, score, highscores, renderHighscores } from './score.js';
 
@@ -51,12 +51,6 @@ function checkDeath() {
 }
 
 levels.forEach(level => {
-    level.addEventListener('click', updateLevel);
+    level.addEventListener('click', updateSnakeSpeed);
+    level.addEventListener('click', updateExpRate);
 });
-
-
-
-// function setActive(level) {
-//     levels.forEach(level => level.classList.remove('active'));
-//     level.classList.add('active');
-// }
