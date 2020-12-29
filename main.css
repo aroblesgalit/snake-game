@@ -41,9 +41,24 @@ body {
 
 .score-board {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    color: #868686;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    color: #868686; 
+    background-color: rgba(33, 35, 37, 0.8);
+    border-radius: 4px;
+}
+
+.close-btn {
+    position: absolute;
+    right: 10px;
+    top: 4px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.close-btn:hover {
+    color: hsl(50, 100%, 50%);
 }
 
 .score {
