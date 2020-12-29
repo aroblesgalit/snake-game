@@ -10,6 +10,8 @@ const scoreBoard = document.querySelector('.score');
 const highscoresDiv = document.querySelector('.highscores');
 const closeBtn = document.querySelector('.close-btn');
 const levelDiv = document.querySelector('#level');
+const scoreboardDiv = document.querySelector('.score-board');
+const labelPEl = document.querySelector('.label');
 export const levels = levelDiv.querySelectorAll('button[data-level]');
 
 renderHighscores(highscores);
@@ -63,5 +65,8 @@ closeBtn.addEventListener('click', toggleBoard);
 function toggleBoard() {
     levelDiv.classList.toggle('hide');
     highscoresDiv.classList.toggle('hide');
+    scoreboardDiv.classList.toggle('shrink');
+    scoreBoard.classList.toggle('move');
+    labelPEl.classList.toggle('move');
     closeBtn.classList.toggle('clicked');
 }

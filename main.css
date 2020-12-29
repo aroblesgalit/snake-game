@@ -48,6 +48,12 @@ body {
     background-color: rgba(33, 35, 37, 0.8);
     border-radius: 4px;
     width: 336px;
+    height: 428px;
+    transition: all 0.2s ease-in-out;
+}
+
+.score-board.shrink {
+    height: 84px;
 }
 
 .close-btn {
@@ -76,6 +82,18 @@ body {
 .score {
     font-size: 32px;
     color: hsl(50, 100%, 50%);
+    transform: translateY(0);
+    transition: all 0.2s ease-in-out;
+}
+
+.label {
+    transform: translateY(0);
+    transition: all 0.2s ease-in-out;
+}
+
+.score.move,
+.label.move {
+    transform: translateY(-80px);
 }
 
 .highscores {
