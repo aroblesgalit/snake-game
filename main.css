@@ -47,18 +47,29 @@ body {
     color: #868686; 
     background-color: rgba(33, 35, 37, 0.8);
     border-radius: 4px;
+    width: 336px;
 }
 
 .close-btn {
     position: absolute;
-    right: 10px;
-    top: 4px;
+    right: 8px;
+    top: 6px;
     cursor: pointer;
-    padding: 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0);
+    transition: all 0.2s ease-in-out;
 }
 
 .close-btn:hover {
     color: hsl(50, 100%, 50%);
+}
+
+.close-btn.clicked {
+    transform: rotate(-135deg);
 }
 
 .score {
@@ -108,4 +119,8 @@ body {
 #level button.active {
     border: 1px solid hsl(50, 100%, 50%);
     color:  hsl(50, 100%, 50%);
+}
+
+.hide {
+    display: none;
 }

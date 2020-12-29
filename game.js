@@ -7,6 +7,8 @@ let lastRenderTime = 0;
 let gameOver = false;
 const gameBoard = document.getElementById('game-board');
 const scoreBoard = document.querySelector('.score');
+const highscoresDiv = document.querySelector('.highscores');
+const closeBtn = document.querySelector('.close-btn');
 export const levels = document.getElementById('level').querySelectorAll('button[data-level]');
 
 renderHighscores(highscores);
@@ -54,3 +56,10 @@ levels.forEach(level => {
     level.addEventListener('click', updateSnakeSpeed);
     level.addEventListener('click', updateExpRate);
 });
+
+closeBtn.addEventListener('click', toggleBoard);
+
+function toggleBoard() {
+    highscoresDiv.classList.toggle('hide');
+    closeBtn.classList.toggle('clicked');
+}
