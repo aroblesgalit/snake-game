@@ -9,7 +9,8 @@ const gameBoard = document.getElementById('game-board');
 const scoreBoard = document.querySelector('.score');
 const highscoresDiv = document.querySelector('.highscores');
 const closeBtn = document.querySelector('.close-btn');
-export const levels = document.getElementById('level').querySelectorAll('button[data-level]');
+const levelDiv = document.querySelector('#level');
+export const levels = levelDiv.querySelectorAll('button[data-level]');
 
 renderHighscores(highscores);
 
@@ -60,6 +61,7 @@ levels.forEach(level => {
 closeBtn.addEventListener('click', toggleBoard);
 
 function toggleBoard() {
+    levelDiv.classList.toggle('hide');
     highscoresDiv.classList.toggle('hide');
     closeBtn.classList.toggle('clicked');
 }

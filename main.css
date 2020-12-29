@@ -55,8 +55,9 @@ body {
     right: 8px;
     top: 6px;
     cursor: pointer;
-    width: 30px;
     height: 30px;
+    width: 30px;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,6 +82,9 @@ body {
     margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid rgb(65, 65, 66);
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
 }
 
 .highscores>h2 {
@@ -98,6 +102,9 @@ body {
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid rgb(65, 65, 66);
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
 }
 
 #level button {
@@ -121,6 +128,12 @@ body {
     color:  hsl(50, 100%, 50%);
 }
 
-.hide {
-    display: none;
+.highscores.hide {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+#level.hide {
+    opacity: 0;
+    transform: translateY(20px);
 }
